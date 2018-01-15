@@ -25,7 +25,7 @@ SECRET_KEY = 'z5ll5c$44n)i0j6a6^a&%#_lf=mi=z&h4%6t82$eoc%5o=#6&s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['skrc.pl', 'www.skrc.pl']
+ALLOWED_HOSTS = ['skrc.pl', 'www.skrc.pl', 'skrc.herokuapp.com']
 
 
 # Application definition
