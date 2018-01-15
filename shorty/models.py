@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
-from django_hosts import reverse
+# from django_hosts import reverse
+from django.urls import reverse
 
 from .utils import create_shortcode
 
@@ -20,5 +21,5 @@ class SkrcUrl(models.Model):
         return str(self.url)
 
     def get_short_url(self):
-        url_path = reverse('shortcode', kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
+        url_path = reverse('shortcode', kwargs={'shortcode': self.shortcode})
         return url_path

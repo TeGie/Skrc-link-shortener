@@ -25,7 +25,9 @@ SECRET_KEY = 'z5ll5c$44n)i0j6a6^a&%#_lf=mi=z&h4%6t82$eoc%5o=#6&s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['skrc.pl', 'www.skrc.pl', 'skrc.herokuapp.com']
+# ALLOWED_HOSTS = ['skrc.pl', 'www.skrc.pl', 'skrc.herokuapp.com']
+
+ALLOWED_HOSTS = ['skrc.herokuapp.com']
 
 
 # Application definition
@@ -37,13 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_hosts',
+    # 'django_hosts',
     'analytics',
     'shorty',
 ]
 
 MIDDLEWARE = [
-    'django_hosts.middleware.HostsRequestMiddleware',
+    # 'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,18 +53,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_hosts.middleware.HostsResponseMiddleware',
+    # 'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'skrc.urls'
 
-ROOT_HOSTCONF = 'skrc.hosts'
+# ROOT_HOSTCONF = 'skrc.hosts'
 
-DEFAULT_HOST = 'www'
+# DEFAULT_HOST = 'www'
 
-DEFAULT_REDIRECT_URL = 'http://www.skrc.pl'
-
-PARENT_HOST = 'skrc.pl'
+# DEFAULT_REDIRECT_URL = 'http://www.skrc.pl'
+#
+# PARENT_HOST = 'skrc.pl'
 
 TEMPLATES = [
     {
