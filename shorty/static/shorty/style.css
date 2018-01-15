@@ -3,6 +3,10 @@ body{
  height: 100%;
 }
 
+p {
+    word-wrap: break-word;
+}
+
 #cover {
   background: #333 url('background.JPG') center center no-repeat;
   background-size: cover;
