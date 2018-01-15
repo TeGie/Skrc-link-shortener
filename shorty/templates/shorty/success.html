@@ -1,0 +1,17 @@
+{% extends "shorty/base.html" %}
+
+{% block title %}
+{{ object.shortcode }} | {{ block.super }}
+{% endblock %}
+
+{% block h2 %}Done{% endblock %}
+
+{% block content %}
+<p class="text-white"><span class="bg-custom opacity">{{ object.url }}</span></p>
+<p>
+    <a href="{{ object.get_short_url }}"><span class="bg-white opacity">{{ object.get_short_url }}</span></a>
+</p>
+<p>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+</p>
+{% endblock %}

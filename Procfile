@@ -1,0 +1,1 @@
+web: gunicorn skrc.wsgi --log-file -

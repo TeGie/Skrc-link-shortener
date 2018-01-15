@@ -1,0 +1,15 @@
+{% extends "shorty/base.html" %}
+
+{% block h2 %}Skrc.pl{% endblock %}
+
+{% block content %}
+<div class="info-form">
+    <form action="." class="form-inline justify-content-center" method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ form }}
+        </div>
+        <button type="submit" class="btn btn-success ">Skrc!</button>
+    </form>
+</div>
+{% endblock %}
