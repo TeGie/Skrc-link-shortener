@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db import models
-# from django_hosts import reverse
 from django.urls import reverse
 
 from .utils import create_shortcode
