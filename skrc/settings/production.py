@@ -20,25 +20,31 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+if 'SECRET_KEY' in os.environ:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    DEBUG = False
+    print('Running Skrc with production settings.')
+else:
+    SECRET_KEY = 'z5ll5c$44n)i0j6a6^a&%#_lf=mi=z&h4%6t82$eoc%5o=#6&s'
+    DEBUG = True
+    print('Running Skrc in debug mode.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['skrc.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'shorty.apps.ShortyConfig',
+    'analytics.apps.AnalyticsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'analytics',
-    'shorty',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = BASE_DIR + '/static/'
+STATIC_URL = '/static/'
 
 
 SHORTCODE_MAX = 15

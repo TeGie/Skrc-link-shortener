@@ -9,7 +9,9 @@
 {% block content %}
 <p class="text-white"><span class="bg-custom opacity">{{ object.url }}</span></p>
 <p>
-    <a href="{{ object.get_short_url }}"><span class="bg-white opacity">{{ object.get_short_url }}</span></a>
+    <a href="{{ object.get_short_url }}">
+        <span class="bg-white opacity">{{ request.build_absolute_uri }}{{ object.get_short_url }}</span>
+    </a>
 </p>
 {% if object.clickevent.count %}
 <p class="text-white"><span class="bg-custom opacity">Visits: {{ object.clickevent.count }}</span></p>

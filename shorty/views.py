@@ -21,15 +21,17 @@ class HomeView(View):
         if form.is_valid():
             url = form.cleaned_data.get('url')
             obj, created = SkrcUrl.objects.get_or_create(url=url)
+            abs_url = request.build_absolute_uri()
             ctx = {
                 'object': obj,
                 'created': created,
+                'abs_url': abs_url
             }
             if created:
                 template = 'shorty/success.html'
             else:
                 template = 'shorty/already-exists.html'
-
+        print(request.build_absolute_uri())
         return render(request, template, ctx)
 
 

@@ -19,6 +19,3 @@ class SkrcUrl(models.Model):
     def __str__(self):
         return str(self.url)
 
-    def get_short_url(self):
-        url_path = reverse('shortcode', kwargs={'shortcode': self.shortcode})
-        return 'https://skrc.herokuapp.com' + url_path

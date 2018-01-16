@@ -1,7 +1,8 @@
 __pycache__/
 .idea/
-staticfiles/
 .env/
+staticfiles/
 skrc/settings/local.py
 /skrc/hosts.py
 /skrc/hostconf/
+*.sqlite3
