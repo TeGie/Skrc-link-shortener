@@ -19,3 +19,5 @@ class SkrcUrl(models.Model):
     def __str__(self):
         return str(self.url)
 
+    def get_short_url(self):
+        return reverse('shortcode', kwargs={'shortcode': self.shortcode})
