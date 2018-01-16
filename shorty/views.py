@@ -36,5 +36,5 @@ class HomeView(View):
 class SkrcRedirectView(View):
     def get(self, request, shortcode=None, *args, **kwargs):
         obj = get_object_or_404(SkrcUrl, shortcode=shortcode)
-        print(ClickEvent.objects.create_event(obj))
+        ClickEvent.objects.create_event(obj)
         return HttpResponseRedirect(obj.url)

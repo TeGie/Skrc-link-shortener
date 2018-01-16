@@ -1,10 +1,12 @@
 {% extends "shorty/base.html" %}
 
-{% block h2 %}Skrc.pl{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block h2 %}Skrc<sup><span class="x-small">herokuapp.com</span></sup>{% endblock %}
 
 {% block content %}
 <div class="info-form d">
-    <form action="." class="justify-content-center" method="POST">
+    <form action="" class="justify-content-center" method="POST">
         <div class="form-group">
             {% csrf_token %}
             {{ form }}

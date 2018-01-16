@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skrc.pl | {% block title %} Skrc URL {% endblock %}</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'shorty/style.css' %}">
-
-
+    <title>SkrcURL | {% block title %}{% endblock %}</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
           crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shorty/style.css' %}">
 </head>
 <body>
     <section id="cover">
         <div id="cover-caption">
             <div id="container" class="container">
                 <div class="row">
-                    <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-xs-12 text-center">
+                    <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-xs-10 offset-xs-1 text-center">
                         <h2 class="text-white">{% block h2 %}{% endblock %}</h2>
                         {% block content %}{% endblock %}
                     </div>

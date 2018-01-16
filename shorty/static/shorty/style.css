@@ -1,5 +1,5 @@
 html,
-body{
+body {
  height: 100%;
 }
 
@@ -32,4 +32,12 @@ p {
 
 .opacity {
     opacity: 0.8;
+}
+
+.errorlist li {
+    color: white;
+}
+
+.x-small {
+    font-size: x-small
 }

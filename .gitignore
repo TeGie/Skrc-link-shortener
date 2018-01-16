@@ -3,3 +3,5 @@ __pycache__/
 staticfiles/
 .env/
 skrc/settings/local.py
+/skrc/hosts.py
+/skrc/hostconf/
