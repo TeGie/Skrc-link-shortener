@@ -5,13 +5,17 @@
 {% block h2 %}Skrc<sup><span class="x-small">herokuapp.com</span></sup>{% endblock %}
 
 {% block content %}
-<div class="info-form d">
+<div class="info-form">
     <form action="" class="justify-content-center" method="POST">
         <div class="form-group">
             {% csrf_token %}
-            {{ form }}
+            {% if form.url.errors %}
+            <span class="text-white bg-custom opacity">{{ form.url.errors | striptags }}</span>
+            {% endif %}
+            {% load filters %}
+            {{ form.url | classes_and_placeholder:'form-control URL' }}
         </div>
-        <button type="submit" class="btn btn-success ">Skrc!</button>
+        <button type="submit" class="btn btn-success">Skrc!</button>
     </form>
 </div>
 {% endblock %}

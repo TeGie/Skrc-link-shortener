@@ -1,41 +1,37 @@
 html,
 body {
- height: 100%;
+    height: 100%;
 }
 
 p {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 #cover {
-  background: #333 url('background.JPG') center center no-repeat;
-  background-size: cover;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
+    background: #333 url('background.JPG') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 #cover-caption {
-  width: 100%;
+    width: 100%;
 }
 
 .btn-secondary,
 .btn-success,
 .form-control {
-  border-radius: 0 !important;
+    border-radius: 0 !important;
 }
 
 .bg-custom {
-  background: #448EDB;
+    background: #448EDB;
 }
 
 .opacity {
     opacity: 0.8;
-}
-
-.errorlist li {
-    color: white;
 }
 
 .x-small {
