@@ -1,11 +1,10 @@
 language: python
-services:
-  - sqlite3
-python:
  - "3.6.4"
  - "nightly"
 install:
  - "pip install -r requirements.txt"
 script:
+ - python manage.py makemigrations
+ - python manage.py migrate
  - python manage.py collectstatic
  - python manage.py test analytics/ shorty/
