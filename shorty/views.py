@@ -8,16 +8,16 @@ from shorty.models import SkrcUrl
 
 
 class HomeView(View):
-    def get(self, request, *args, **kwargs):
-        form = SubmitUrlForm()
-        ctx = {'form': form}
-        return render(request, 'shorty/home.html', ctx)
+    form_class = SubmitUrlForm
+    template = 'shorty/home.html'
 
-    def post(self, request, *args, **kwargs):
-        form = SubmitUrlForm(request.POST)
-        ctx = {'form': form}
-        template = 'shorty/home.html'
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template, {'form': form})
 
+    def post(self, request):
+        form = self.form_class(request.POST)
+        ctx = {'form': form}
         if form.is_valid():
             url = form.cleaned_data.get('url')
             obj, created = SkrcUrl.objects.get_or_create(url=url)
@@ -25,16 +25,13 @@ class HomeView(View):
                 'object': obj,
                 'created': created,
             }
-            if created:
-                template = 'shorty/success.html'
-            else:
-                template = 'shorty/already-exists.html'
+            self.template = 'shorty/shortcode.html'
 
-        return render(request, template, ctx)
+        return render(request, self.template, ctx)
 
 
 class SkrcRedirectView(View):
-    def get(self, request, shortcode=None, *args, **kwargs):
+    def get(self, request, shortcode):
         obj = get_object_or_404(SkrcUrl, shortcode=shortcode)
         ClickEvent.objects.create_event(obj)
         return HttpResponseRedirect(obj.url)

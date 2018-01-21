@@ -6,3 +6,4 @@ skrc/settings/local.py
 /skrc/hosts.py
 /skrc/hostconf/
 *.sqlite3
+/geckodriver.log

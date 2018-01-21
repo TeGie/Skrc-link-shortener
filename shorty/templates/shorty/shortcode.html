@@ -1,0 +1,28 @@
+{% extends "shorty/base.html" %}
+
+{% block title %}
+{{ object.shortcode }}
+{% endblock %}
+
+{% block h2 %}
+{% if created %} Done {% else %} Found {% endif %}
+{% endblock %}
+
+{% block content %}
+<p id="lnk-long-txt">
+    <span class="text-white bg-custom opacity">{{ object.url }}</span>
+</p>
+<p>
+    <a id="lnk-short" href="{{ object.get_short_url }}">
+        <span class="bg-white opacity">{{ request.build_absolute_uri }}{{ object.shortcode }}</span>
+    </a>
+</p>
+{% if object.clickevent.count %}
+<p id="counter" class="text-white">
+    <span class="bg-custom opacity">Visits: {{ object.clickevent.count }}</span>
+</p>
+{% endif %}
+<p>
+    <a id="btn-back" class="btn btn-secondary" href="{% url 'home' %}">Back</a>
+</p>
+{% endblock %}
