@@ -1,7 +1,6 @@
 language: python
 python:
   - "3.6.4"
-  - "nightly"
 services:
   - postgresql
 install:
@@ -12,4 +11,4 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate --noinput
   - python manage.py collectstatic
-  - python manage.py test analytics/
+  - python manage.py test analytics/ shorty/
