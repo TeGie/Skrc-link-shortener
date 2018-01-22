@@ -7,3 +7,4 @@ skrc/settings/local.py
 /skrc/hostconf/
 *.sqlite3
 /geckodriver.log
+/requirements_full.txt
