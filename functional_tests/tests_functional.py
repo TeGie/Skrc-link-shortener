@@ -131,6 +131,4 @@ class FullSiteNavigationTest(LiveServerTestCase):
             self.browser.find_element_by_id('counter').text
         ))
         # She decides stop playing with that silly site
-        self.fail("""More tests!
-        TODO 1 Add postgres settings
-        """)
+        self.fail("""More tests!""")
