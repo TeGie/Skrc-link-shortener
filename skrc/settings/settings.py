@@ -89,6 +89,7 @@ if 'DATABASE_NAME' and 'DATABASE_USER' and 'DATABASE_PASSWORD' in os.environ:
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
         }
     }
+    print('Running Skrc with postgres')
 else:
     DATABASES = {
         'default': {
@@ -96,6 +97,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+    print('Running Skrc with sqlite3')
 
 
 # Password validation

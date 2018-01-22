@@ -15,7 +15,7 @@ class HomeViewTest(TestCase):
         self.client.post('/', data={'url': 'https://docs.djangoproject.com/'})
 
         self.assertEqual(1, SkrcUrl.objects.all().count())
-        self.assertEqual('https://docs.djangoproject.com/', SkrcUrl.objects.get(pk=1).url)
+        self.assertEqual('https://docs.djangoproject.com/', SkrcUrl.objects.first().url)
 
     def test_page_returns_correct_html_after_POST_request(self):
         response = self.client.post('/', data={'url': 'https://docs.djangoproject.com/'})
